@@ -5,7 +5,11 @@
 from flask import Flask
 
 #this is test  for build cloud to run
+<<<<<<< HEAD
 #This also 2nd Test for  build cloud to run
+=======
+#this is 3rd test for CICD pipline to run & build the image and put into GKE 
+>>>>>>> 3973959 (update app.py)
 
 app = Flask(__name__)
 
