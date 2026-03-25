@@ -3,14 +3,16 @@
 # to /app, copies the current directory's contents into the container, installs
 # the required Python packages from requirements.txt, exposes port 8080, and
 
-FROM python:3.9-slim
+FROM python:3.11-slim
 
 WORKDIR /app
 
-COPY . .
+COPY requirements.txt .
 
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install -r requirements.txt
 
-EXPOSE 8080
+COPY app.py .
+
+# CMD ensures that Flask runs on port 8080
 
 CMD ["python","app.py"]
